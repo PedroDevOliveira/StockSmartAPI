@@ -15,14 +15,14 @@ const makeSut = (): ISutTypes => {
 
 }
 
-describe('Load Product List Controller', () => {
+describe('Load Product List Controller',  () => {
     //Todo: Change this test
-    it('should return 200 if everything was right', () => {
+    it('should return 200 if everything was right', async () => {
         const { sut } = makeSut()
         const request = {
             body: {}
         }
-        const response = sut.handle(request)
+        const response = await sut.handle(request)
         expect(response.statusCode).toBe(200)
     });
 });
