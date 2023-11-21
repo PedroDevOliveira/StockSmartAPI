@@ -1,4 +1,4 @@
-import {LoadProductListController} from "../../../../../src/api/controllers/product/LoadProductListController";
+import {LoadProductListController} from "@controllers/product";
 
 
 interface ISutTypes {
