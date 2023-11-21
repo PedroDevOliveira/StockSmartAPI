@@ -10,6 +10,17 @@ export class CreateProductController implements IController{
             }
         }
 
+        const requiredFields = ['name', 'price']
+
+        for (const field of requiredFields) {
+            if (!req.body[field]) {
+                return {
+                    statusCode: 400,
+                    body: []
+                }
+            }
+        }
+
         return {
             statusCode: 200,
             body: []
