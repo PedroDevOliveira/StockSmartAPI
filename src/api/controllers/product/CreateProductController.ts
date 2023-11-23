@@ -10,25 +10,32 @@ export class CreateProductController implements IController {
   }
 
   async handle(req: IHttpRequest): Promise<IHttpResponse> {
-    if (!req.body) {
-      return badRequest(new MissingParamError('req.body'));
-    }
-
-    const requiredFields = ['name', 'price'];
-
-    for (const field of requiredFields) {
-      if (!req.body[field]) {
-        return badRequest(new MissingParamError(field));
+    try {
+      if (!req.body) {
+        return badRequest(new MissingParamError('req.body'));
       }
+
+      const requiredFields = ['name', 'price'];
+
+      for (const field of requiredFields) {
+        if (!req.body[field]) {
+          return badRequest(new MissingParamError(field));
+        }
+      }
+
+      const { name, price } = req.body;
+
+      const product = await this.addProductService.execute({ name, price });
+
+      return {
+        statusCode: 200,
+        body: product
+      };
+    } catch (error) {
+      return {
+        statusCode: 500,
+        body: error
+      };
     }
-
-    const { name, price } = req.body;
-
-    const product = await this.addProductService.execute({ name, price });
-
-    return {
-      statusCode: 200,
-      body: product
-    };
   }
 }

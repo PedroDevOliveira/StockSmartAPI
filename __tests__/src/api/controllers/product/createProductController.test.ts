@@ -74,6 +74,21 @@ describe('Create Product Controller', () => {
     });
   });
 
+  it('should return 500 if AddProductService throws', async () => {
+    const { sut, addProductServiceStub } = makeSut();
+    jest.spyOn(addProductServiceStub, 'execute').mockImplementationOnce(() => {
+      throw new Error();
+    });
+    const request = {
+      body: {
+        name: 'any_name',
+        price: 'any_price'
+      }
+    };
+    const response = await sut.handle(request);
+    expect(response.statusCode).toBe(500);
+  });
+
   it('should return 400 no body was passed', async () => {
     const { sut } = makeSut();
     const request = {};
