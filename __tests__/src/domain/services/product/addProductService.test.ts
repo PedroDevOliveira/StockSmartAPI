@@ -1,4 +1,4 @@
-import {AddProductService} from "@/domain/services/product/AddProductService";
+import { AddProductService } from '@/domain/services/product/AddProductService';
 
 // const makeAddProductService = (): AddProductService => {
 //     class AddProductServiceStub implements AddProductService {
@@ -18,23 +18,22 @@ import {AddProductService} from "@/domain/services/product/AddProductService";
 // }
 
 interface ISutTypes {
-    sut: AddProductService
+  sut: AddProductService;
 }
 
 const makeSut = (): ISutTypes => {
-    const sut = new AddProductService()
+  const sut = new AddProductService();
 
-    return {
-        sut
-    }
-
-}
+  return {
+    sut
+  };
+};
 //TODO: Improve this tests
 describe('Add Product Service', () => {
-    it('should return an new product', async () => {
-        const {sut} = makeSut()
+  it('should return an new product', async () => {
+    const { sut } = makeSut();
 
-        const newProduct = await sut.execute({name: 'valid_name', price: 'valid_price'})
-        expect(newProduct).toEqual(newProduct)
-    });
+    const newProduct = await sut.execute({ name: 'valid_name', price: 'valid_price' });
+    expect(newProduct).toEqual(newProduct);
+  });
 });

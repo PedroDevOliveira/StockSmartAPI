@@ -1,0 +1,15 @@
+{
+    "env": {
+        "es2021": true,
+        "node": true
+    },
+    "extends": ["standard-with-typescript", "prettier"],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "rules": {
+        "max-len": ["error", {"code": 120, "ignoreUrls": true}],
+        "@typescript-eslint/strict-boolean-expressions": "off"
+    }
+}
