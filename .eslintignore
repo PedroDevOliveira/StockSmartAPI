@@ -1,0 +1,7 @@
+.idea
+.scannerwork
+dist/
+node_modules
+*.json
+*.MD
+*.js
