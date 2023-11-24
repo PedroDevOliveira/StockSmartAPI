@@ -1,4 +1,4 @@
-import SequelizeHelper from '@/config/sequelize';
+import SequelizeHelper from '@/main/config/sequelize';
 import { DataTypes, Model } from 'sequelize';
 
 class ProductModel extends Model {}

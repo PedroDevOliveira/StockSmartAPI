@@ -1,5 +1,5 @@
 import { ProductRepository } from '@/infra/db/repository/ProductRepository';
-import sequelize from '@/config/sequelize';
+import sequelize from '@/main/config/sequelize';
 
 const makeSut = () => {
   const sut = new ProductRepository();

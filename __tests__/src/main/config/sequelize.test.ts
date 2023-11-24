@@ -1,4 +1,4 @@
-import SequelizeHelper from '@/config/sequelize';
+import SequelizeHelper from '@/main/config/sequelize';
 import { Sequelize } from 'sequelize';
 
 describe('Sequelize ORM', () => {
@@ -15,7 +15,7 @@ describe('Sequelize ORM', () => {
 
   it('should use SQLite in test environment', () => {
     process.env.NODE_ENV = 'test';
-    const SequelizeConfig = require('@/config/sequelize').default;
+    const SequelizeConfig = require('@/main/config/sequelize').default;
 
     expect(SequelizeConfig.getDialect()).toEqual('sqlite');
   });
@@ -23,7 +23,7 @@ describe('Sequelize ORM', () => {
   it('should use Postgres in non-test environment', () => {
     process.env.NODE_ENV = 'production';
     jest.resetModules();
-    const SequelizeConfig = require('@/config/sequelize').default;
+    const SequelizeConfig = require('@/main/config/sequelize').default;
 
     expect(SequelizeConfig.getDialect()).toEqual('postgres');
   });
