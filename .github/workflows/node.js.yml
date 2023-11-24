@@ -50,6 +50,7 @@ jobs:
       env:
         MY_GITHUB_TOKEN: '${{ secrets.MY_GITHUB_TOKEN }}'
       run: |
+        echo ${{ secrets.MY_GITHUB_TOKEN }}
         git config --local user.email "pedro@github.com"
         git config --local user.name "pedro.dev.oliveira@gmail.com"
         git config --global credential.helper cache
