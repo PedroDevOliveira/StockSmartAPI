@@ -1,5 +1,5 @@
 import { Product } from '@/domain/entities/Product';
-import { type ProductRepository } from '@/infra/repository/ProductRepository';
+import { type ProductRepository } from '@/infra/db/repository/ProductRepository';
 
 export interface IService {
   execute: (params: any) => Promise<any>;

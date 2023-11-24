@@ -1,8 +1,8 @@
-import { ProductRepository } from '@/infra/repository/ProductRepository';
 import { AddProductService } from '@/domain/services/product/AddProductService';
+import { type IProductRepository } from '@/infra/db/interfaces/IProductRepository';
 
-const makeProductRepository = (): ProductRepository => {
-  class ProductRepositoryStub implements ProductRepository {
+const makeProductRepository = (): IProductRepository => {
+  class ProductRepositoryStub implements IProductRepository {
     async create(): Promise<any> {
       return new Promise(resolve =>
         resolve({
@@ -21,7 +21,7 @@ const makeProductRepository = (): ProductRepository => {
 };
 
 interface ISutTypes {
-  productRepository: ProductRepository;
+  productRepository: IProductRepository;
   sut: AddProductService;
 }
 
