@@ -1,7 +1,7 @@
 import { type IHttpRequest, type IHttpResponse } from '@/api/protocols/http';
 import { type IController } from '@/api/protocols/controller';
 import { badRequest, MissingParamError } from '@/api/errors/badRequest';
-import { type IService } from '@/domain/services/product/AddProductService';
+import { IService } from '@/domain/services/product/AddProductService';
 import { serverError } from '@/api/errors/serverError';
 
 export class CreateProductController implements IController {
