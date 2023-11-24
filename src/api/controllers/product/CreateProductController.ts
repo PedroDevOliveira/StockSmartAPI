@@ -1,11 +1,12 @@
 import { type IHttpRequest, type IHttpResponse } from '@/api/protocols/http';
 import { type IController } from '@/api/protocols/controller';
 import { badRequest, MissingParamError } from '@/api/errors/badRequest';
-import { type AddProductService } from '@/domain/services/product/AddProductService';
+import { IService } from '@/domain/services/product/AddProductService';
+import { serverError } from '@/api/errors/serverError';
 
 export class CreateProductController implements IController {
-  private readonly addProductService: AddProductService;
-  constructor(addProductService: AddProductService) {
+  private readonly addProductService: IService;
+  constructor(addProductService: IService) {
     this.addProductService = addProductService;
   }
 
@@ -32,10 +33,7 @@ export class CreateProductController implements IController {
         body: product
       };
     } catch (error) {
-      return {
-        statusCode: 500,
-        body: error
-      };
+      return serverError();
     }
   }
 }
