@@ -1,13 +1,8 @@
 import request from 'supertest';
-import express, { Express } from 'express';
-import { setupMiddlewares } from '@/main/config/middlewares';
+import app from '@/main/config/app';
 
 describe('Middleware Integration Tests', () => {
-  let app: Express;
-
   beforeAll(() => {
-    app = express();
-    setupMiddlewares(app);
     app.get('/test', (req, res) => {
       res.send({ message: 'Test route' });
     });
