@@ -1,5 +1,5 @@
 import { Product } from '@/domain/entities/Product';
-import { ProductRepository } from '@/infra/repository/ProductRepository';
+import { type ProductRepository } from '@/infra/repository/ProductRepository';
 
 export interface IService {
   execute: (params: any) => Promise<any>;
@@ -10,6 +10,7 @@ export class AddProductService implements IService {
   constructor(repository: ProductRepository) {
     this.repository = repository;
   }
+
   async execute(params: { name: string; price: string }): Promise<Product> {
     return await new Promise(resolve => {
       resolve(this.repository.create(new Product(params)));
