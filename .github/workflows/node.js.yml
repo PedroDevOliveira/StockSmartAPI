@@ -50,8 +50,8 @@ jobs:
       env:
         MY_GITHUB_TOKEN: '${{ secrets.MY_GITHUB_TOKEN }}'
       run: |
-        git config --local user.email "pedro@github.com"
-        git config --local user.name "pedro.dev.oliveira@gmail.com"
+        git config --local user.email "pedro.dev.oliveira@gmail.com"
+        git config --local user.name "PedroDevOliveira"
         git config --global credential.helper cache
         git add -A
         git commit -m ":rotating_light: format code" -a || echo "No changes to commit"
