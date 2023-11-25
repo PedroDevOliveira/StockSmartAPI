@@ -16,6 +16,13 @@ export default ProductModel.init(
       type: DataTypes.STRING,
       allowNull: false,
       unique: true
+    },
+    description: {
+      type: DataTypes.STRING
+    },
+    price: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   },
   {

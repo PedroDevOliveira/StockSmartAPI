@@ -20,7 +20,7 @@ describe('Product Repository', () => {
 
   it('should create product with correct values', async () => {
     const { sut } = makeSut();
-    const productFromDB = await sut.create({ name: 'valid_name' });
+    const productFromDB = await sut.create({ name: 'valid_name', price: 1000 });
 
     expect(productFromDB.dataValues).toBeDefined();
     expect(productFromDB.dataValues).toHaveProperty('id');
