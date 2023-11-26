@@ -1,12 +1,12 @@
 import { type IHttpRequest, type IHttpResponse } from '@/api/protocols/http';
 import { type IController } from '@/api/protocols/controller';
 import { badRequest, MissingParamError } from '@/api/errors/badRequest';
-import { IService } from '@/domain/services/product/AddProductService';
 import { serverError } from '@/api/errors/serverError';
+import { IAddProduct } from '@/domain/usecases/create-product';
 
 export class CreateProductController implements IController {
-  private readonly addProductService: IService;
-  constructor(addProductService: IService) {
+  private readonly addProductService: IAddProduct;
+  constructor(addProductService: IAddProduct) {
     this.addProductService = addProductService;
   }
 

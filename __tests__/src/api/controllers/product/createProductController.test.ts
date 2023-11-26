@@ -1,8 +1,7 @@
 import { CreateProductController } from '@controllers/product';
-import { IService } from '@/domain/services/product/AddProductService';
-
-const makeAddProductService = (): IService => {
-  class AddProductServiceStub implements IService {
+import { IAddProduct } from '@/domain/usecases/create-product';
+const makeAddProductService = (): IAddProduct => {
+  class AddProductServiceStub implements IAddProduct {
     async execute(params: any): Promise<any> {
       return new Promise(resolve =>
         resolve({
@@ -21,7 +20,7 @@ const makeAddProductService = (): IService => {
 };
 
 interface ISutTypes {
-  addProductServiceStub: IService;
+  addProductServiceStub: IAddProduct;
   sut: CreateProductController;
 }
 

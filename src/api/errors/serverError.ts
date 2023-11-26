@@ -1,4 +1,4 @@
-import { IHttpResponse } from '@/api/protocols/http';
+import { type IHttpResponse } from '@/api/protocols/http';
 
 export class ServerError extends Error {
   constructor() {

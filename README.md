@@ -1,5 +1,7 @@
 # 📦 StockSmart API
 
+[![codecov](https://codecov.io/github/PedroDevOliveira/StockSmartAPI/graph/badge.svg?token=ZT6HMN3I5K)](https://codecov.io/github/PedroDevOliveira/StockSmartAPI)
+
 ## 🌟 Visão Geral
 🔍 StockSmart é um sistema de gerenciamento de estoques inovador, projetado para ser uma solução white label. 
 Ideal para empresas de diversos ramos que buscam otimizar o controle e a visibilidade de seus estoques, o StockSmart 

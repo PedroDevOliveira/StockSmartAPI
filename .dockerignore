@@ -1,0 +1,14 @@
+.github
+.husky
+__tests__
+database
+docs
+node_modules
+yarn-error.log
+*.MD
+.eslintignore
+.eslintrc.json
+.prettierignore
+.prettierrc
+.sequelizerc
+jest.config.ts
