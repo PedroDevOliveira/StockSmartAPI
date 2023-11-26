@@ -2,9 +2,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "release", "develop" ]
 
 jobs:
   lint-and-format:
