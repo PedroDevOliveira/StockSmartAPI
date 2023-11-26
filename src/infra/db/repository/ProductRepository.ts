@@ -1,7 +1,7 @@
-import { type IProductRepository } from '@/infra/db/interfaces/IProductRepository';
 import ProductModel from '@/infra/db/models/ProductModel';
+import { ICreateProductRepository } from '@/infra/db/interfaces/product/create-product-repository';
 
-export class ProductRepository implements IProductRepository {
+export class ProductRepository implements ICreateProductRepository {
   async create(params: any): Promise<any> {
     return await ProductModel.create(params);
   }
