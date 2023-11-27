@@ -2,9 +2,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "release", "develop" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "release", "develop" ]
 
 jobs:
   lint-and-format:
@@ -37,7 +37,7 @@ jobs:
           git config --global credential.helper cache
           git add -A
           git commit -m ":rotating_light: format code" -a || echo "No changes to commit"
-          git push https://${{ secrets.MY_GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git push https://${{ secrets.MY_GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
 
   test:
     runs-on: ubuntu-latest
