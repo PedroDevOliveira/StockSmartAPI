@@ -1,6 +1,6 @@
-import { IAddAccount, IAddAccountModel } from '@/domain/usecases/add-account';
+import { type IAddAccount, type IAddAccountModel } from '@/domain/usecases/add-account';
 import { User } from '@/domain/entities/User';
-import { IAddAccountRepository } from '@/infra/db/interfaces/account/add-account-repository';
+import { type IAddAccountRepository } from '@/infra/db/interfaces/account/add-account-repository';
 export class AddAccountService implements IAddAccount {
   private readonly addAccountRepository: IAddAccountRepository;
   constructor(addAccountRepository: IAddAccountRepository) {

@@ -1,6 +1,6 @@
-import { User } from '@/domain/entities/User';
-import { IAddAccountModel } from '@/domain/usecases/add-account';
+import { type User } from '@/domain/entities/User';
+import { type IAddAccountModel } from '@/domain/usecases/add-account';
 
 export interface IAddAccountRepository {
-  add(accountData: IAddAccountModel): Promise<User>;
+  add: (accountData: IAddAccountModel) => Promise<User>;
 }

@@ -1,4 +1,4 @@
-import { Product } from '@/domain/entities/Product';
+import { type Product } from '@/domain/entities/Product';
 
 export interface IAddProductModel {
   name: string;
@@ -6,5 +6,5 @@ export interface IAddProductModel {
 }
 
 export interface IAddProduct {
-  execute(params: IAddProductModel): Promise<Product>;
+  execute: (params: IAddProductModel) => Promise<Product>;
 }

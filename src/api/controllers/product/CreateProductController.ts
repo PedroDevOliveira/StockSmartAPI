@@ -2,7 +2,7 @@ import { type IHttpRequest, type IHttpResponse } from '@/api/protocols/http';
 import { type IController } from '@/api/protocols/controller';
 import { badRequest, MissingParamError } from '@/api/errors/badRequest';
 import { serverError } from '@/api/errors/serverError';
-import { IAddProduct } from '@/domain/usecases/create-product';
+import { type IAddProduct } from '@/domain/usecases/create-product';
 
 export class CreateProductController implements IController {
   private readonly addProductService: IAddProduct;

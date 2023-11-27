@@ -1,6 +1,6 @@
 import { Product } from '@/domain/entities/Product';
 import { type ProductRepository } from '@/infra/db/repository/ProductRepository';
-import { IAddProduct, IAddProductModel } from '@/domain/usecases/create-product';
+import { type IAddProduct, type IAddProductModel } from '@/domain/usecases/create-product';
 
 export class AddProductService implements IAddProduct {
   private readonly repository: ProductRepository;
