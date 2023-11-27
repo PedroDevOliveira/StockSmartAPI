@@ -1,8 +1,8 @@
-import { IController } from '@/api/protocols/controller';
-import { IHttpRequest, IHttpResponse } from '@/api/protocols/http';
+import { type IController } from '@/api/protocols/controller';
+import { type IHttpRequest, type IHttpResponse } from '@/api/protocols/http';
 import { serverError } from '@/api/errors/serverError';
 import { badRequest, InvalidParamError, MissingParamError } from '@/api/errors/badRequest';
-import { IAddAccount } from '@/domain/usecases/add-account';
+import { type IAddAccount } from '@/domain/usecases/add-account';
 
 export class SignUpController implements IController {
   private readonly addAccount: IAddAccount;
