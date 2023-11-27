@@ -1,0 +1,6 @@
+projectKey=Stock-Smart
+serverUrl=http://localhost:9000
+serverVersion=10.3.0.82913
+dashboardUrl=http://localhost:9000/dashboard?id=Stock-Smart
+ceTaskId=AYwS0fMDGjelUGw69TTT
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYwS0fMDGjelUGw69TTT
