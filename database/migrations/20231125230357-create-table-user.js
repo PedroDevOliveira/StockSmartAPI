@@ -10,13 +10,8 @@ module.exports = {
         primaryKey: true,
         unique: true
       },
-      name: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        unique: true
-      },
       email: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false,
       },
       password_hashed: {
