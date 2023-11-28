@@ -38,7 +38,7 @@ describe('SignUp Controller', () => {
     const httpRequest = {
       body: {
         password: 'any_password',
-        passwordConfirmation: 'any_password'
+        confirmPassword: 'any_password'
       }
     };
     const httpResponse = await sut.handle(httpRequest);
@@ -51,7 +51,7 @@ describe('SignUp Controller', () => {
     const httpRequest = {
       body: {
         email: 'any_email@mail.com',
-        passwordConfirmation: 'any_password'
+        confirmPassword: 'any_password'
       }
     };
     const httpResponse = await sut.handle(httpRequest);
@@ -69,7 +69,7 @@ describe('SignUp Controller', () => {
     };
     const httpResponse = await sut.handle(httpRequest);
     expect(httpResponse.statusCode).toBe(400);
-    expect(httpResponse.body).toEqual(new MissingParamError('passwordConfirmation'));
+    expect(httpResponse.body).toEqual(new MissingParamError('confirmPassword'));
   });
 
   test('Should return 400 if password confirmation fails', async () => {
@@ -78,12 +78,12 @@ describe('SignUp Controller', () => {
       body: {
         email: 'any_email@mail.com',
         password: 'any_password',
-        passwordConfirmation: 'invalid_password'
+        confirmPassword: 'invalid_password'
       }
     };
     const httpResponse = await sut.handle(httpRequest);
     expect(httpResponse.statusCode).toBe(400);
-    expect(httpResponse.body).toEqual(new InvalidParamError('passwordConfirmation'));
+    expect(httpResponse.body).toEqual(new InvalidParamError('confirmPassword'));
   });
 
   test('Should return 500 if AddAccount throws', async () => {
@@ -95,7 +95,7 @@ describe('SignUp Controller', () => {
       body: {
         email: 'any_email@mail.com',
         password: 'any_password',
-        passwordConfirmation: 'any_password'
+        confirmPassword: 'any_password'
       }
     };
     const httpResponse = await sut.handle(httpRequest);
@@ -110,7 +110,7 @@ describe('SignUp Controller', () => {
       body: {
         email: 'any_email@mail.com',
         password: 'any_password',
-        passwordConfirmation: 'any_password'
+        confirmPassword: 'any_password'
       }
     };
     await sut.handle(httpRequest);
@@ -126,7 +126,7 @@ describe('SignUp Controller', () => {
       body: {
         email: 'valid_email@mail.com',
         password: 'valid_password',
-        passwordConfirmation: 'valid_password'
+        confirmPassword: 'valid_password'
       }
     };
     const httpResponse = await sut.handle(httpRequest);

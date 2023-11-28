@@ -12,15 +12,15 @@ export class SignUpController implements IController {
 
   async handle(req: IHttpRequest): Promise<IHttpResponse> {
     try {
-      const requiredFields = ['email', 'password', 'passwordConfirmation'];
+      const requiredFields = ['email', 'password', 'confirmPassword'];
       for (const field of requiredFields) {
         if (!req.body[field]) {
           return badRequest(new MissingParamError(field));
         }
       }
-      const { email, password, passwordConfirmation } = req.body;
-      if (password !== passwordConfirmation) {
-        return badRequest(new InvalidParamError('passwordConfirmation'));
+      const { email, password, confirmPassword } = req.body;
+      if (password !== confirmPassword) {
+        return badRequest(new InvalidParamError('confirmPassword'));
       }
 
       const account = await this.addAccount.execute({

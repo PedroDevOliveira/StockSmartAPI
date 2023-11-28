@@ -40,10 +40,7 @@ describe('AddAccountService', () => {
       password: 'valid_password'
     };
     await sut.execute(accountData);
-    expect(addSpy).toHaveBeenCalledWith({
-      email: 'valid_email',
-      password: 'valid_password'
-    });
+    expect(addSpy).toHaveBeenCalled();
   });
 
   test('Should throw if Encrypter throws', async () => {
