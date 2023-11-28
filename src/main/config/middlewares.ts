@@ -2,7 +2,7 @@ import { type Express, json, type NextFunction, type Response, type Request } fr
 import cors from 'cors';
 import helmet from 'helmet';
 
-export const setupMiddlewares = (app: Express): void => {
+export default (app: Express): void => {
   app.use(cors());
   app.use(json());
   app.use(helmet());
