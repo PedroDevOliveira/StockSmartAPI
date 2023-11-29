@@ -1,4 +1,4 @@
-import { type IHttpRequest, type IHttpResponse } from '@/api/protocols/http';
+import { type IHttpRequest, type IHttpResponse, success } from '@/api/protocols/http';
 import { type IController } from '@/api/protocols/controller';
 import { badRequest, MissingParamError } from '@/api/errors/badRequest';
 import { serverError } from '@/api/errors/serverError';
@@ -28,10 +28,7 @@ export class CreateProductController implements IController {
 
       const product = await this.addProductService.execute({ name, price });
 
-      return {
-        statusCode: 200,
-        body: product
-      };
+      return success(product);
     } catch (error) {
       return serverError();
     }

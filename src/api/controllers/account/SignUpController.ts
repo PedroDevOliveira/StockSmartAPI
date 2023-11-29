@@ -1,5 +1,5 @@
 import { type IController } from '@/api/protocols/controller';
-import { type IHttpRequest, type IHttpResponse } from '@/api/protocols/http';
+import { type IHttpRequest, type IHttpResponse, success } from '@/api/protocols/http';
 import { serverError } from '@/api/errors/serverError';
 import { badRequest, InvalidParamError, MissingParamError } from '@/api/errors/badRequest';
 import { type IAddAccount } from '@/domain/usecases/add-account';
@@ -27,10 +27,7 @@ export class SignUpController implements IController {
         email,
         password
       });
-      return {
-        statusCode: 200,
-        body: account
-      };
+      return success(account);
     } catch (error) {
       return serverError();
     }
