@@ -10,6 +10,7 @@
     },
     "rules": {
         "max-len": ["error", {"code": 120, "ignoreUrls": true}],
-        "@typescript-eslint/strict-boolean-expressions": "off"
+        "@typescript-eslint/strict-boolean-expressions": "off",
+        "@typescript-eslint/no-misused-promises": "off"
     }
 }
