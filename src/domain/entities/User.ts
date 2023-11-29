@@ -9,7 +9,7 @@ export class User {
   constructor(props: Omit<User, 'id'>, id?: string) {
     this.email = props.email;
     this.password = props.password;
-
+    this.id = id;
     if (!id) {
       this.id = uuid();
     }
